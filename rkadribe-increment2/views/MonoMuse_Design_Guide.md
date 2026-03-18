@@ -14,11 +14,11 @@ The color palette is drawn directly from the MonoMuse exhibit building — its g
 
 | Swatch | Hex | Name | Usage |
 |--------|-----|------|-------|
-| ![Midnight Navy](assets/midnight_navy.png) | `#0E1A2E` | **Midnight Navy** | Primary background, headers, navigation bar |
-| ![Neon Azure](assets/neon_azure.png) | `#3F98CD` | **Neon Azure** | Accent color, links, buttons, hover states |
-| ![Steel Blue](assets/steel_blue.png) | `#7CAADB` | **Steel Blue** | Secondary accent, borders, icon highlights |
-| ![Silver Mist](assets/silver_mist.png) | `#D9D9D9` | **Silver Mist** | Body text on dark backgrounds, dividers |
-| ![Gallery White](assets/gallery_white.png) | `#F5F5F7` | **Gallery White** | Page backgrounds, card surfaces, light sections |
+| ![Midnight Navy](../assets/midnight_navy.png) | `#0E1A2E` | **Midnight Navy** | Primary background, headers, navigation bar |
+| ![Neon Azure](../assets/neon_azure.png) | `#3F98CD` | **Neon Azure** | Accent color, links, buttons, hover states |
+| ![Steel Blue](../assets/steel_blue.png) | `#7CAADB` | **Steel Blue** | Secondary accent, borders, icon highlights |
+| ![Silver Mist](../assets/silver_mist.png) | `#D9D9D9` | **Silver Mist** | Body text on dark backgrounds, dividers |
+| ![Gallery White](../assets/gallery_white.png) | `#F5F5F7` | **Gallery White** | Page backgrounds, card surfaces, light sections |
 
 ### Color Rationale
 
