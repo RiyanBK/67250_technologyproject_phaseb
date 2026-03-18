@@ -14,11 +14,11 @@ The color palette is drawn directly from the MonoMuse exhibit building — its g
 
 | Swatch | Hex | Name | Usage |
 |--------|-----|------|-------|
-| ![#0e1a2e](https://via.placeholder.com/80x40/0e1a2e/0e1a2e) | `#0E1A2E` | **Midnight Navy** | Primary background, headers, navigation bar |
-| ![#3f98cd](https://via.placeholder.com/80x40/3f98cd/3f98cd) | `#3F98CD` | **Neon Azure** | Accent color, links, buttons, hover states |
-| ![#7CAADB](https://via.placeholder.com/80x40/7CAADB/7CAADB) | `#7CAADB` | **Steel Blue** | Secondary accent, borders, icon highlights |
-| ![#D9D9D9](https://via.placeholder.com/80x40/D9D9D9/D9D9D9) | `#D9D9D9` | **Silver Mist** | Body text on dark backgrounds, dividers |
-| ![#F5F5F7](https://via.placeholder.com/80x40/F5F5F7/F5F5F7) | `#F5F5F7` | **Gallery White** | Page backgrounds, card surfaces, light sections |
+| ![Midnight Navy](assets/midnight_navy.png) | `#0E1A2E` | **Midnight Navy** | Primary background, headers, navigation bar |
+| ![Neon Azure](assets/neon_azure.png) | `#3F98CD` | **Neon Azure** | Accent color, links, buttons, hover states |
+| ![Steel Blue](assets/steel_blue.png) | `#7CAADB` | **Steel Blue** | Secondary accent, borders, icon highlights |
+| ![Silver Mist](assets/silver_mist.png) | `#D9D9D9` | **Silver Mist** | Body text on dark backgrounds, dividers |
+| ![Gallery White](assets/gallery_white.png) | `#F5F5F7` | **Gallery White** | Page backgrounds, card surfaces, light sections |
 
 ### Color Rationale
 
