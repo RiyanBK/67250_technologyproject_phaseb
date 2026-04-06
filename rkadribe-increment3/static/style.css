@@ -158,6 +158,20 @@ nav a:hover {
     box-shadow: none;
 }
 
+/* ---- Greeting banner (home page) ---- */
+#greeting {
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #3F98CD;
+    margin: 2rem auto 0;
+    padding: 0.6rem 0;
+    background: transparent;
+    opacity: 0.85;
+}
+
 /* ---- Typography ---- */
 h2 {
     font-size: 28px;
@@ -236,7 +250,7 @@ td {
 }
 
 tr:nth-child(even) td {
-    background-color: #162030;
+    background-color: #192E4A;
 }
 
 /* Part 10: Form styling (Checkout page) */

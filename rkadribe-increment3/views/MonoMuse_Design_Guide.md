@@ -19,6 +19,7 @@ The color palette is drawn directly from the MonoMuse exhibit building — its g
 | ![Steel Blue](../assets/steel_blue.png) | `#7CAADB` | **Steel Blue** | Secondary accent, borders, icon highlights |
 | ![Silver Mist](../assets/silver_mist.png) | `#D9D9D9` | **Silver Mist** | Body text on dark backgrounds, dividers |
 | ![Gallery White](../assets/gallery_white.png) | `#F5F5F7` | **Gallery White** | Page backgrounds, card surfaces, light sections |
+| ![Deep Navy](../assets/deep_navy.png) | `#192E4A` | **Deep Navy** | Table row zebra stripe (even rows) |
 
 ### Color Rationale
 
@@ -27,6 +28,7 @@ The color palette is drawn directly from the MonoMuse exhibit building — its g
 - **Steel Blue (#7CAADB):** A lighter blue sampled from the illuminated dome and upper structure. Used for secondary highlights and softer UI elements.
 - **Silver Mist (#D9D9D9):** Taken from the reflective steel panels of the building. Provides a neutral, readable tone for text on dark backgrounds.
 - **Gallery White (#F5F5F7):** A slightly warm white for clean backgrounds and content areas, keeping the design open and breathable.
+- **Deep Navy (#192E4A):** A mid-dark navy used for alternating table rows, providing visible zebra striping against the Midnight Navy base without breaking the dark palette.
 
 ---
 
