@@ -120,21 +120,32 @@ ActiveNav();
 // Part 5 (Increment 4): Read More / Read Less Toggle (jQuery)
 // ============================================================
 
-$(document).ready(function () {
-    // When the "Read More" button is clicked
-    $("#readMore").click(function () {
-        $("#longIntro").show();   // Show the long introduction text
-        $("#readLess").show();    // Show the "Read Less" button
-        $("#readMore").hide();    // Hide the "Read More" button
-    });
+// Guard: only run jQuery code on pages that include jQuery
+if (typeof $ !== 'undefined') {
+    $(document).ready(function () {
+        // When the "Read More" button is clicked
+        $("#readMore").click(function () {
+            $("#longIntro").show();   // Show the long introduction text
+            $("#readLess").show();    // Show the "Read Less" button
+            $("#readMore").hide();    // Hide the "Read More" button
+        });
 
-    // When the "Read Less" button is clicked
-    $("#readLess").click(function () {
-        $("#longIntro").hide();   // Hide the long introduction text
-        $("#readLess").hide();    // Hide the "Read Less" button itself
-        $("#readMore").show();    // Show the "Read More" button again
+        // When the "Read Less" button is clicked
+        $("#readLess").click(function () {
+            $("#longIntro").hide();   // Hide the long introduction text
+            $("#readLess").hide();    // Hide the "Read Less" button itself
+            $("#readMore").show();    // Show the "Read More" button again
+        });
     });
-});
+}
+
+// ============================================================
+// Part 3 (Increment 5): Responsive Hamburger Nav Toggle
+// ============================================================
+
+function toggleNav() {
+    document.querySelector('.nav_bar').classList.toggle('responsive');
+}
 
 // ============================================================
 // Part 6 (Increment 4): Show Purchase Form (Buy Tickets)

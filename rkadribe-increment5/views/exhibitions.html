@@ -20,10 +20,13 @@
             <img id="logo" src="../static/monomuse_logo.png" alt="MonoMuse Museum Logo">
         </header>
         <nav class="nav_bar">
-            <a href="../index.html">Home</a> |
-            <a href="explore.html">Explore</a> |
-            <a href="exhibitions.html">Exhibitions</a> |
-            <a class="nav-outlined" href="tickets.html">Buy Tickets</a>
+            <button class="hamburger" onclick="toggleNav()">&#9776;</button>
+            <span class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="explore.html">Explore</a>
+                <a href="exhibitions.html">Exhibitions</a>
+                <a class="nav-outlined" href="tickets.html">Buy Tickets</a>
+            </span>
         </nav>
         <main class="main">
             <div class="hero-section">
@@ -35,6 +38,17 @@
                 <p>An immersive exhibition that delves into the surreal world of digital art, drawing inspiration from dreams and subconscious thoughts. Visitors will encounter interactive installations, virtual reality experiences, and multimedia artworks that challenge perceptions of reality and imagination.</p>
                 <h3>Tech and Tradition</h3>
                 <p>A fascinating showcase exploring how traditional art forms like painting and sculpture are being revolutionized by modern technology. Discover innovative fusions of classical techniques with digital tools, including augmented reality sculptures and AI-implemented paintings that push the boundaries of artistic expression.</p>
+
+                <h3>Featured Video</h3>
+                <p>Take a closer look at contemporary museum exhibitions from around the world.</p>
+                <div class="video-wrapper">
+                    <iframe
+                        src="https://www.youtube.com/embed/XCKMtfTiUog"
+                        title="Museum Exhibition Video"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
             </div>
         </main>
         <footer class="footer"><p id="copyYear"></p></footer>

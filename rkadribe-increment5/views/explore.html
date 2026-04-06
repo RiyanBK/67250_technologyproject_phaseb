@@ -10,9 +10,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <link rel="stylesheet" href="../static/style.css">
     <script src="../static/main.js" defer></script>
     <script src="../static/script.js" defer></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 <body onload="addYear()">
     <div class="container">
@@ -20,10 +22,13 @@
             <img id="logo" src="../static/monomuse_logo.png" alt="MonoMuse Museum Logo">
         </header>
         <nav class="nav_bar">
-            <a href="../index.html">Home</a> |
-            <a href="explore.html">Explore</a> |
-            <a href="exhibitions.html">Exhibitions</a> |
-            <a class="nav-outlined" href="tickets.html">Buy Tickets</a>
+            <button class="hamburger" onclick="toggleNav()">&#9776;</button>
+            <span class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="explore.html">Explore</a>
+                <a href="exhibitions.html">Exhibitions</a>
+                <a class="nav-outlined" href="tickets.html">Buy Tickets</a>
+            </span>
         </nav>
         <main class="main">
             <div class="hero-section">
@@ -37,9 +42,25 @@
                     <li><strong>Founding year:</strong> 2020</li>
                     <li><strong>Milestones:</strong> Opened first exhibition in 2021, partnered with CMU in 2022, launched online platform in 2023.</li>
                 </ul>
+
+                <h3>Find Us</h3>
+                <p>MonoMuse is located in the heart of Pittsburgh, PA, near Carnegie Mellon University.</p>
+                <div id="map"></div>
             </div>
         </main>
         <footer class="footer"><p id="copyYear"></p></footer>
     </div>
+
+    <script>
+        var currentpage = L.map('map').setView([40.4432, -79.9428], 15);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(currentpage);
+
+        L.marker([40.4432, -79.9428]).addTo(currentpage)
+            .bindPopup('<strong>MonoMuse Museum</strong><br>Pittsburgh, PA')
+            .openPopup();
+    </script>
 </body>
 </html>

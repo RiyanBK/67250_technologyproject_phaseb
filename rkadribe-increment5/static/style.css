@@ -1,5 +1,5 @@
 /* ==========================================
-   MonoMuse – style.css (Increment 4)
+   MonoMuse – style.css (Increment 5)
    ========================================== */
 
 /* Part 3 & 4: Universal selector with global styles */
@@ -82,6 +82,29 @@ nav {
     margin: 0;
     padding: 0;
     flex-wrap: wrap;
+}
+
+/* Nav links wrapper */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap;
+    background: transparent;
+}
+
+/* Hamburger button — hidden by default on large screens */
+.hamburger {
+    display: none;
+    background: transparent;
+    border: 1px solid rgba(245,245,247,.4);
+    border-radius: 6px;
+    color: #F5F5F7;
+    font-size: 1.2rem;
+    line-height: 1;
+    padding: 6px 10px;
+    cursor: pointer;
+    margin-left: auto;
 }
 
 /* Part 6: Navigation links */
@@ -391,7 +414,71 @@ input[type="submit"]:hover {
     background-color: #7CAADB;
 }
 
+/* ---- Leaflet Map ---- */
+#map {
+    height: 400px;
+    width: 100%;
+    margin: 1rem 0;
+    border-radius: 8px;
+    border: 1px solid rgba(245,245,247,.15);
+}
+
+/* ---- YouTube iframe ---- */
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 aspect ratio */
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: #000;
+}
+
 /* ---- Responsive design (media queries) ---- */
+
+/* Mobile: hamburger nav (≤ 650px) */
+@media (max-width: 650px) {
+    .nav_bar {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        padding: 6px 12px;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 4px 0 8px;
+        border-top: 1px solid rgba(245,245,247,.1);
+        margin-top: 4px;
+    }
+
+    .nav-links a {
+        width: 100%;
+        padding: 10px 14px;
+        border-radius: 6px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav_bar.responsive .nav-links {
+        display: flex;
+    }
+}
+
 @media (max-width: 768px) {
     header {
         flex-direction: column;
