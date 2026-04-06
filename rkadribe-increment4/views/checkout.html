@@ -15,32 +15,35 @@
     <script src="../static/script.js" defer></script>
 </head>
 <body onload="addYear()">
-    <header>
-        <img id="logo" src="../static/monomuse_logo.png" alt="MonoMuse Museum Logo">
-        <nav>
+    <div class="container">
+        <header class="header">
+            <img id="logo" src="../static/monomuse_logo.png" alt="MonoMuse Museum Logo">
+        </header>
+        <nav class="nav_bar">
             <a href="../index.html">Home</a> |
             <a href="explore.html">Explore</a> |
             <a href="exhibitions.html">Exhibitions</a> |
-            <a href="tickets.html">Tickets</a> |
-            <a id="navselected" class="nav-outlined" href="checkout.html">Checkout</a>
+            <a class="nav-outlined" href="tickets.html">Buy Tickets</a>
         </nav>
-    </header>
-    <div class="hero-section">
-        <span class="hero-text">Checkout</span>
-        <img src="../assets/monomusemuseum.png" alt="MonoMuse museum exterior" class="hero-img">
+        <main class="main">
+            <div class="hero-section">
+                <span class="hero-text">Checkout</span>
+                <img src="../assets/monomusemuseum.png" alt="MonoMuse museum exterior" class="hero-img">
+            </div>
+            <div class="content">
+                <h2>Checkout</h2>
+                <form>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="quantity">Ticket Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" required>
+                    <input type="submit" value="Submit" onclick="alert('Redirecting to payment system.')">
+                </form>
+            </div>
+        </main>
+        <footer class="footer"><p id="copyYear"></p></footer>
     </div>
-    <div class="main">
-        <h2>Checkout</h2>
-        <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="quantity">Ticket Quantity:</label>
-            <input type="number" id="quantity" name="quantity" required>
-            <input type="submit" value="Submit">
-        </form>
-    </div>
-    <footer><p id="copyYear"></p></footer>
 </body>
 </html>

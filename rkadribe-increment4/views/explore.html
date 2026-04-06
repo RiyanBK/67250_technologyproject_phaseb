@@ -15,27 +15,31 @@
     <script src="../static/script.js" defer></script>
 </head>
 <body onload="addYear()">
-    <header>
-        <img id="logo" src="../static/monomuse_logo.png" alt="MonoMuse Museum Logo">
-        <nav>
+    <div class="container">
+        <header class="header">
+            <img id="logo" src="../static/monomuse_logo.png" alt="MonoMuse Museum Logo">
+        </header>
+        <nav class="nav_bar">
             <a href="../index.html">Home</a> |
-            <a id="navselected" href="explore.html">Explore</a> |
+            <a href="explore.html">Explore</a> |
             <a href="exhibitions.html">Exhibitions</a> |
             <a class="nav-outlined" href="tickets.html">Buy Tickets</a>
         </nav>
-    </header>
-    <div class="hero-section">
-        <span class="hero-text">Explore</span>
-        <img src="../assets/monomusemuseum.png" alt="MonoMuse museum exterior" class="hero-img">
+        <main class="main">
+            <div class="hero-section">
+                <span class="hero-text">Explore</span>
+                <img src="../assets/monomusemuseum.png" alt="MonoMuse museum exterior" class="hero-img">
+            </div>
+            <div class="content">
+                <p>Our mission is to bridge the gap between art and technology, fostering innovation and creativity in the digital age.</p>
+                <ul>
+                    <li><strong>Who we serve:</strong> Artists, technologists, students, and the general public interested in contemporary culture.</li>
+                    <li><strong>Founding year:</strong> 2020</li>
+                    <li><strong>Milestones:</strong> Opened first exhibition in 2021, partnered with CMU in 2022, launched online platform in 2023.</li>
+                </ul>
+            </div>
+        </main>
+        <footer class="footer"><p id="copyYear"></p></footer>
     </div>
-    <div class="main">
-        <p>Our mission is to bridge the gap between art and technology, fostering innovation and creativity in the digital age.</p>
-        <ul>
-            <li><strong>Who we serve:</strong> Artists, technologists, students, and the general public interested in contemporary culture.</li>
-            <li><strong>Founding year:</strong> 2020</li>
-            <li><strong>Milestones:</strong> Opened first exhibition in 2021, partnered with CMU in 2022, launched online platform in 2023.</li>
-        </ul>
-    </div>
-    <footer><p id="copyYear"></p></footer>
 </body>
 </html>

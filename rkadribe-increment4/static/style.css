@@ -1,5 +1,5 @@
 /* ==========================================
-   MonoMuse – style.css (Increment 2)
+   MonoMuse – style.css (Increment 4)
    ========================================== */
 
 /* Part 3 & 4: Universal selector with global styles */
@@ -21,14 +21,44 @@ html, body {
     padding: 0;
 }
 
+/* ---- CSS Grid Container ---- */
+.container {
+    display: grid;
+    grid-template-areas:
+        'header header'
+        'nav_bar nav_bar'
+        'main main'
+        'footer footer';
+}
+
+.header {
+    grid-area: header;
+}
+
+.nav_bar {
+    grid-area: nav_bar;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    border-bottom: 1px solid rgba(245,245,247,.15);
+    padding: 4px 20px;
+    margin: 0;
+}
+
+.main {
+    grid-area: main;
+}
+
+.footer {
+    grid-area: footer;
+}
+
 /* ---- Header ---- */
 header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     padding: 6px 20px;
     margin: 0;
-    border-bottom: 1px solid rgba(245,245,247,.15);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -51,6 +81,7 @@ nav {
     background: transparent;
     margin: 0;
     padding: 0;
+    flex-wrap: wrap;
 }
 
 /* Part 6: Navigation links */
@@ -69,7 +100,7 @@ nav a:hover {
 }
 
 /* Part 6: Active page indicator */
-#navselected {
+.active {
     color: #3F98CD;
 }
 
@@ -95,12 +126,69 @@ nav a:hover {
     background-color: #7CAADB;
 }
 
-/* ---- Main content ---- */
-.main {
+/* ---- Main content area ---- */
+.content {
     max-width: 900px;
     margin: 2rem auto;
     padding: 2rem;
     background: transparent;
+}
+
+/* ---- Read More / Read Less (jQuery toggle) ---- */
+#longIntro {
+    display: none;
+}
+
+#readLess {
+    display: none;
+}
+
+#readMore, #readLess {
+    background-color: transparent;
+    border: 1px solid rgba(245,245,247,.4);
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-weight: 400;
+    color: #F5F5F7;
+    cursor: pointer;
+    margin-top: 12px;
+    margin-right: 8px;
+}
+
+#readMore:hover, #readLess:hover {
+    border-color: #3F98CD;
+    color: #3F98CD;
+}
+
+/* ---- Purchase form (hidden by default) ---- */
+.purchase-form {
+    display: none;
+    max-width: 480px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    border: 1px solid rgba(245,245,247,.15);
+    border-radius: 8px;
+}
+
+.purchase-form h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* ---- Buy Now button ---- */
+.buy-now-btn {
+    background-color: #3F98CD;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 16px;
+    font-weight: 500;
+    color: #F5F5F7;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.buy-now-btn:hover {
+    background-color: #7CAADB;
 }
 
 /* ---- Hero section ---- */
@@ -327,7 +415,7 @@ input[type="submit"]:hover {
         font-size: 2.5rem;
     }
 
-    .main {
+    .content {
         padding: 1rem;
         margin: 1rem;
     }

@@ -98,3 +98,48 @@ function addYear() {
         yearEl.innerHTML = "&copy; " + new Date().getFullYear() + " MonoMuse. All rights reserved.";
     }
 }
+
+// ============================================================
+// Part 4 (Increment 4): Active Navigation Bar
+// ============================================================
+
+/* Sets the 'active' class on the navigation link that matches the current page URL. */
+function ActiveNav() {
+    const navLinks = document.querySelectorAll('nav a');
+
+    navLinks.forEach(link => {
+        if (window.location.href === link.href) {
+            link.classList.add('active');
+        }
+    });
+}
+
+ActiveNav();
+
+// ============================================================
+// Part 5 (Increment 4): Read More / Read Less Toggle (jQuery)
+// ============================================================
+
+$(document).ready(function () {
+    // When the "Read More" button is clicked
+    $("#readMore").click(function () {
+        $("#longIntro").show();   // Show the long introduction text
+        $("#readLess").show();    // Show the "Read Less" button
+        $("#readMore").hide();    // Hide the "Read More" button
+    });
+
+    // When the "Read Less" button is clicked
+    $("#readLess").click(function () {
+        $("#longIntro").hide();   // Hide the long introduction text
+        $("#readLess").hide();    // Hide the "Read Less" button itself
+        $("#readMore").show();    // Show the "Read More" button again
+    });
+});
+
+// ============================================================
+// Part 6 (Increment 4): Show Purchase Form (Buy Tickets)
+// ============================================================
+
+function showPurchaseForm() {
+    document.querySelector('.purchase-form').style.display = 'block';
+}
