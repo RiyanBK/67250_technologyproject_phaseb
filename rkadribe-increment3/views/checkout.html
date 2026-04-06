@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Riyan Kadribegovic">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+    <meta name="description" content="MonoMuse website redesign project">
+    <title>MonoMuse - Checkout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="../static/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <img id="logo" src="../static/monomuse_logo.png" alt="MonoMuse Museum Logo">
+        <nav>
+            <a href="../index.html">Home</a> |
+            <a href="explore.html">Explore</a> |
+            <a href="exhibitions.html">Exhibitions</a> |
+            <a href="tickets.html">Tickets</a> |
+            <a id="navselected" class="nav-outlined" href="checkout.html">Checkout</a>
+        </nav>
+    </header>
+    <div class="hero-section">
+        <span class="hero-text">Checkout</span>
+        <img src="../assets/monomusemuseum.png" alt="MonoMuse museum exterior" class="hero-img">
+    </div>
+    <div class="main">
+        <h2>Checkout</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="quantity">Ticket Quantity:</label>
+            <input type="number" id="quantity" name="quantity" required>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <footer>&copy; 2026 MonoMuse. All rights reserved.</footer>
+</body>
+</html>
