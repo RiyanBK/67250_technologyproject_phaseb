@@ -84,18 +84,15 @@ nav {
     flex-wrap: wrap;
 }
 
-/* Nav links wrapper */
+/* Nav links wrapper — hidden by default (mobile-first), shown on desktop */
 .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    flex-wrap: wrap;
+    display: none;
     background: transparent;
 }
 
-/* Hamburger button — hidden by default on large screens */
+/* Hamburger button — shown by default (mobile-first), hidden on desktop */
 .hamburger {
-    display: none;
+    display: block;
     background: transparent;
     border: 1px solid rgba(245,245,247,.4);
     border-radius: 6px;
@@ -105,6 +102,20 @@ nav {
     padding: 6px 10px;
     cursor: pointer;
     margin-left: auto;
+}
+
+/* Desktop: show nav links, hide hamburger */
+@media (min-width: 651px) {
+    .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        flex-wrap: wrap;
+    }
+
+    .hamburger {
+        display: none;
+    }
 }
 
 /* Part 6: Navigation links */
@@ -453,29 +464,21 @@ input[type="submit"]:hover {
         padding: 6px 12px;
     }
 
-    .nav-links {
-        display: none;
-        width: 100%;
+    .nav_bar.responsive .nav-links {
+        display: flex;
         flex-direction: column;
         align-items: flex-start;
+        width: 100%;
         gap: 0;
         padding: 4px 0 8px;
         border-top: 1px solid rgba(245,245,247,.1);
         margin-top: 4px;
     }
 
-    .nav-links a {
+    .nav_bar.responsive .nav-links a {
         width: 100%;
         padding: 10px 14px;
         border-radius: 6px;
-    }
-
-    .hamburger {
-        display: block;
-    }
-
-    .nav_bar.responsive .nav-links {
-        display: flex;
     }
 }
 
