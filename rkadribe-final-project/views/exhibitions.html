@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Riyan Kadribegovic">
-    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
-    <meta name="description" content="MonoMuse website redesign project">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems, Exhibitions">
+    <meta name="description" content="MonoMuse Museum exhibitions and featured video">
     <title>MonoMuse - Exhibitions</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +20,7 @@
             <img id="logo" src="../static/monomuse_logo.png" alt="MonoMuse Museum Logo">
         </header>
         <nav class="nav_bar">
-            <button class="hamburger" onclick="toggleNav()">&#9776;</button>
+            <button class="hamburger" onclick="toggleNav()" aria-label="Open navigation menu">&#9776;</button>
             <span class="nav-links">
                 <a href="../index.html">Home</a>
                 <a href="explore.html">Explore</a>
@@ -34,12 +34,47 @@
                 <img src="../assets/monomusemuseum.png" alt="MonoMuse museum exterior" class="hero-img">
             </div>
             <div class="content">
-                <h3>Digital Dreams</h3>
+                <h1 class="page-title">Current Exhibitions</h1>
+
+                <h2>Digital Dreams</h2>
                 <p>An immersive exhibition that delves into the surreal world of digital art, drawing inspiration from dreams and subconscious thoughts. Visitors will encounter interactive installations, virtual reality experiences, and multimedia artworks that challenge perceptions of reality and imagination.</p>
-                <h3>Tech and Tradition</h3>
+
+                <h2>Tech and Tradition</h2>
                 <p>A fascinating showcase exploring how traditional art forms like painting and sculpture are being revolutionized by modern technology. Discover innovative fusions of classical techniques with digital tools, including augmented reality sculptures and AI-implemented paintings that push the boundaries of artistic expression.</p>
 
-                <h3>Featured Video</h3>
+                <h2>Gallery</h2>
+                <p>A selection of works from our current collections.</p>
+
+                <div class="gallery-container">
+                    <div class="gallery-slide active">
+                        <img src="../assets/gallery_white.png" alt="Gallery White — abstract geometric composition">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="../assets/neon_azure.png" alt="Neon Azure — vibrant digital artwork in blues and greens">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="../assets/midnight_navy.png" alt="Midnight Navy — deep tonal digital painting">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="../assets/steel_blue.png" alt="Steel Blue — industrial-inspired digital composition">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="../assets/silver_mist.png" alt="Silver Mist — soft monochromatic digital art">
+                    </div>
+
+                    <button class="gallery-btn gallery-btn-prev" onclick="changeSlide(-1)" aria-label="Previous image">&#8592;</button>
+                    <button class="gallery-btn gallery-btn-next" onclick="changeSlide(1)" aria-label="Next image">&#8594;</button>
+
+                    <div class="gallery-dots">
+                        <span class="gallery-dot active" onclick="goToSlide(0)" aria-label="Slide 1"></span>
+                        <span class="gallery-dot" onclick="goToSlide(1)" aria-label="Slide 2"></span>
+                        <span class="gallery-dot" onclick="goToSlide(2)" aria-label="Slide 3"></span>
+                        <span class="gallery-dot" onclick="goToSlide(3)" aria-label="Slide 4"></span>
+                        <span class="gallery-dot" onclick="goToSlide(4)" aria-label="Slide 5"></span>
+                    </div>
+                </div>
+
+                <h2>Featured Video</h2>
                 <p>Take a closer look at contemporary museum exhibitions from around the world through a tour of the Smithsonian!</p>
                 <div class="video-wrapper">
                     <iframe

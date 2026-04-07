@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Riyan Kadribegovic">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems, Tickets">
+    <meta name="description" content="Order confirmation for MonoMuse Museum tickets">
+    <title>MonoMuse - Order Confirmed</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="../static/main.js" defer></script>
+    <script src="../static/script.js" defer></script>
+</head>
+<body onload="addYear()">
+    <div class="container">
+        <header class="header">
+            <img id="logo" src="../static/monomuse_logo.png" alt="MonoMuse Museum Logo">
+        </header>
+        <nav class="nav_bar">
+            <button class="hamburger" onclick="toggleNav()" aria-label="Open navigation menu">&#9776;</button>
+            <span class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="explore.html">Explore</a>
+                <a href="exhibitions.html">Exhibitions</a>
+                <a class="nav-outlined" href="tickets.html">Buy Tickets</a>
+            </span>
+        </nav>
+        <main class="main">
+            <div class="hero-section">
+                <span class="hero-text">Order Confirmed</span>
+                <img src="../assets/monomusemuseum.png" alt="MonoMuse museum exterior at dusk" class="hero-img">
+            </div>
+            <div class="content">
+                <h1 class="page-title">Your Tickets Are Booked</h1>
+                <p>Thank you for your purchase! A confirmation will be sent to your email address. We look forward to seeing you at MonoMuse.</p>
+
+                <div class="confirmation-box">
+                    <h2>Order Summary</h2>
+                    <div class="order-summary">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>Name</td>
+                                    <td id="confName">—</td>
+                                </tr>
+                                <tr>
+                                    <td>Email</td>
+                                    <td id="confEmail">—</td>
+                                </tr>
+                                <tr>
+                                    <td>Ticket Type</td>
+                                    <td id="confType">—</td>
+                                </tr>
+                                <tr>
+                                    <td>Quantity</td>
+                                    <td id="confQty">—</td>
+                                </tr>
+                                <tr>
+                                    <td>Visit Date</td>
+                                    <td id="confDate">—</td>
+                                </tr>
+                                <tr class="order-total-row">
+                                    <td>Total Paid</td>
+                                    <td id="confTotal">—</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <a class="cta" href="../index.html">Back to Home</a>
+            </div>
+        </main>
+        <footer class="footer"><p id="copyYear"></p></footer>
+    </div>
+</body>
+</html>

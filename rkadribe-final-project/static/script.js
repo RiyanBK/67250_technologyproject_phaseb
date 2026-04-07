@@ -148,9 +148,169 @@ function toggleNav() {
 }
 
 // ============================================================
-// Part 6 (Increment 4): Show Purchase Form (Buy Tickets)
+// Final Project: Checkout Form — Price Calculation & Validation
 // ============================================================
 
-function showPurchaseForm() {
-    document.querySelector('.purchase-form').style.display = 'block';
+/* Ticket prices per type */
+var TICKET_PRICES = { general: 18, student: 10, member: 15 };
+
+/* Show the checkout form and pre-fill the date when Buy Now is clicked */
+function showCheckoutForm(dateValue) {
+    var section = document.getElementById('checkoutSection');
+    if (!section) return;
+    section.style.display = 'block';
+    if (dateValue) {
+        var dateInput = document.getElementById('visitDate');
+        if (dateInput) dateInput.value = dateValue;
+    }
+    section.scrollIntoView({ behavior: 'smooth' });
+    updatePrice();
+}
+
+/* Recalculate and display the total price */
+function updatePrice() {
+    var typeEl = document.getElementById('ticketType');
+    var qtyEl  = document.getElementById('ticketQty');
+    var priceEl = document.getElementById('totalPrice');
+    if (!typeEl || !qtyEl || !priceEl) return;
+
+    var price = TICKET_PRICES[typeEl.value] || 18;
+    var qty   = parseInt(qtyEl.value) || 0;
+    priceEl.textContent = '$' + (price * qty).toFixed(2);
+}
+
+/* Show an error message below a field */
+function showFieldError(fieldId, msg) {
+    var el = document.getElementById(fieldId);
+    if (el) { el.textContent = msg; el.style.display = 'block'; }
+}
+
+/* Clear all error messages */
+function clearErrors() {
+    document.querySelectorAll('.error-msg').forEach(function(el) {
+        el.style.display = 'none';
+        el.textContent = '';
+    });
+}
+
+/* Validate and submit the checkout form */
+function placeOrder() {
+    clearErrors();
+    var valid = true;
+
+    var name     = document.getElementById('custName');
+    var email    = document.getElementById('custEmail');
+    var date     = document.getElementById('visitDate');
+    var type     = document.getElementById('ticketType');
+    var qty      = document.getElementById('ticketQty');
+    var zip      = document.getElementById('zipCode');
+
+    if (!name || !name.value.trim()) {
+        showFieldError('nameError', 'Name is required.');
+        valid = false;
+    }
+
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailRegex.test(email.value)) {
+        showFieldError('emailError', 'A valid email address is required.');
+        valid = false;
+    }
+
+    if (!date || !date.value) {
+        showFieldError('dateError', 'Please select a visit date.');
+        valid = false;
+    }
+
+    var qtyVal = parseInt(qty ? qty.value : 0);
+    if (isNaN(qtyVal) || qtyVal < 1 || qtyVal > 10) {
+        showFieldError('qtyError', 'Please select between 1 and 10 tickets.');
+        valid = false;
+    }
+
+    if (zip && zip.value && !/^\d{5}$/.test(zip.value)) {
+        showFieldError('zipError', 'Zip code must be exactly 5 digits.');
+        valid = false;
+    }
+
+    if (!valid) return;
+
+    // Store order details in sessionStorage for confirmation page
+    var price = TICKET_PRICES[type.value] || 18;
+    var total = price * qtyVal;
+    var typeLabel = type.options[type.selectedIndex].text;
+
+    sessionStorage.setItem('lastOrder', JSON.stringify({
+        name:     name.value.trim(),
+        email:    email.value.trim(),
+        type:     typeLabel,
+        quantity: qtyVal,
+        date:     date.value,
+        total:    total
+    }));
+
+    window.location.href = 'confirmation.html';
+}
+
+// ============================================================
+// Final Project: Image Gallery / Slideshow
+// ============================================================
+
+var galleryIndex = 0;
+
+function initGallery() {
+    var slides = document.querySelectorAll('.gallery-slide');
+    var dots   = document.querySelectorAll('.gallery-dot');
+    if (slides.length === 0) return;
+    showSlide(0, slides, dots);
+}
+
+function showSlide(n, slides, dots) {
+    if (!slides) slides = document.querySelectorAll('.gallery-slide');
+    if (!dots)   dots   = document.querySelectorAll('.gallery-dot');
+
+    slides.forEach(function(s) { s.classList.remove('active'); });
+    dots.forEach(function(d)   { d.classList.remove('active'); });
+
+    galleryIndex = ((n % slides.length) + slides.length) % slides.length;
+    slides[galleryIndex].classList.add('active');
+    if (dots[galleryIndex]) dots[galleryIndex].classList.add('active');
+}
+
+function changeSlide(dir) {
+    showSlide(galleryIndex + dir);
+}
+
+function goToSlide(n) {
+    showSlide(n);
+}
+
+// Auto-advance every 5 seconds if gallery exists
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+        if (document.querySelector('.gallery-slide')) {
+            initGallery();
+            setInterval(function() { changeSlide(1); }, 5000);
+        }
+    });
+} else {
+    if (document.querySelector('.gallery-slide')) {
+        initGallery();
+        setInterval(function() { changeSlide(1); }, 5000);
+    }
+}
+
+// ============================================================
+// Final Project: Confirmation Page — Load Order from sessionStorage
+// ============================================================
+
+if (document.getElementById('confName')) {
+    var order = JSON.parse(sessionStorage.getItem('lastOrder') || 'null');
+    if (order) {
+        document.getElementById('confName').textContent  = order.name;
+        document.getElementById('confEmail').textContent = order.email;
+        document.getElementById('confType').textContent  = order.type;
+        document.getElementById('confQty').textContent   = order.quantity;
+        document.getElementById('confDate').textContent  = order.date;
+        document.getElementById('confTotal').textContent = '$' + parseFloat(order.total).toFixed(2);
+    }
 }

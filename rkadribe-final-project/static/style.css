@@ -1,5 +1,7 @@
 /* ==========================================
-   MonoMuse – style.css (Increment 5)
+   MonoMuse – style.css (Final Project)
+   External libraries: Leaflet (https://leafletjs.com), jQuery (https://jquery.com)
+   Fonts: Google Fonts – Roboto
    ========================================== */
 
 /* Part 3 & 4: Universal selector with global styles */
@@ -280,6 +282,16 @@ nav a:hover {
     box-shadow: none;
 }
 
+/* ---- Page h1 ---- */
+h1.page-title {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #F5F5F7;
+    margin: 2rem 0 0.5rem;
+    background: transparent;
+    padding: 0;
+}
+
 /* ---- Greeting banner (home page) ---- */
 #greeting {
     text-align: center;
@@ -452,6 +464,297 @@ input[type="submit"]:hover {
     height: 100%;
     border: none;
     background: #000;
+}
+
+/* ---- Image Gallery / Slideshow ---- */
+.gallery-container {
+    position: relative;
+    width: 100%;
+    margin: 1.5rem 0;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #071220;
+}
+
+.gallery-slide {
+    display: none;
+    text-align: center;
+    background: transparent;
+}
+
+.gallery-slide.active {
+    display: block;
+}
+
+.gallery-slide img {
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px 8px 0 0;
+    background: transparent;
+}
+
+.gallery-caption {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    color: rgba(245,245,247,.7);
+    background: rgba(14,26,46,.85);
+    margin: 0;
+    border-radius: 0 0 8px 8px;
+}
+
+.gallery-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    background: transparent;
+    padding: 0 8px;
+}
+
+.gallery-btn {
+    pointer-events: all;
+    background: rgba(14,26,46,.7);
+    border: 1px solid rgba(245,245,247,.2);
+    border-radius: 50%;
+    color: #F5F5F7;
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    padding: 0;
+    transition: background 0.2s;
+}
+
+.gallery-btn:hover {
+    background: rgba(63,152,205,.7);
+    border-color: #3F98CD;
+}
+
+.gallery-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 0 6px;
+    background: transparent;
+}
+
+.gallery-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(245,245,247,.3);
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    transition: background 0.2s;
+}
+
+.gallery-dot.active {
+    background: #3F98CD;
+}
+
+/* ---- Checkout form (final project) ---- */
+.checkout-form {
+    max-width: 520px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 1px solid rgba(245,245,247,.15);
+    border-radius: 8px;
+    background: rgba(255,255,255,.02);
+}
+
+.checkout-form h2 {
+    text-align: center;
+    margin-bottom: 1.2rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    background: transparent;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 400;
+    margin-bottom: 4px;
+    padding: 0;
+    background: transparent;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1px solid rgba(245,245,247,.3);
+    border-radius: 4px;
+    background: rgba(255,255,255,.06);
+    color: #F5F5F7;
+    font-size: 0.95rem;
+    display: block;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.form-group select option {
+    background: #0E1A2E;
+    color: #F5F5F7;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #3F98CD;
+}
+
+.error-msg {
+    color: #e05c5c;
+    font-size: 0.82rem;
+    margin-top: 3px;
+    display: none;
+    background: transparent;
+}
+
+.price-display {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #3F98CD;
+    margin: 1rem 0;
+    background: transparent;
+}
+
+.price-display span {
+    background: transparent;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 1rem 0;
+    background: transparent;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+    accent-color: #3F98CD;
+}
+
+.checkbox-group label {
+    padding: 0;
+    margin: 0;
+    background: transparent;
+}
+
+.place-order-btn {
+    width: 100%;
+    background-color: #3F98CD;
+    color: #F5F5F7;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background 0.2s;
+}
+
+.place-order-btn:hover {
+    background-color: #7CAADB;
+}
+
+/* ---- Confirmation page ---- */
+.confirmation-box {
+    max-width: 540px;
+    margin: 3rem auto;
+    padding: 2.5rem;
+    border: 1px solid rgba(63,152,205,.35);
+    border-radius: 12px;
+    background: rgba(63,152,205,.05);
+    text-align: center;
+}
+
+.confirmation-box h1 {
+    color: #3F98CD;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    background: transparent;
+}
+
+.confirmation-box .check-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+    background: transparent;
+}
+
+.order-summary {
+    text-align: left;
+    margin: 1.5rem 0;
+    background: transparent;
+}
+
+.order-summary table {
+    margin: 0;
+}
+
+.order-summary td {
+    background: transparent;
+}
+
+.order-summary td:first-child {
+    font-weight: 400;
+    color: rgba(245,245,247,.7);
+    width: 50%;
+}
+
+.order-total-row td {
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: #3F98CD !important;
+    border-top: 1px solid rgba(245,245,247,.15);
+    padding-top: 12px;
+}
+
+/* ---- Museum hours / info cards ---- */
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    margin: 1.5rem 0;
+    background: transparent;
+}
+
+.info-card {
+    border: 1px solid rgba(245,245,247,.12);
+    border-radius: 8px;
+    padding: 1.2rem;
+    background: rgba(255,255,255,.02);
+}
+
+.info-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+.info-card p, .info-card li {
+    font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ---- Responsive design (media queries) ---- */

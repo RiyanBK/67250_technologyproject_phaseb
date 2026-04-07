@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Riyan Kadribegovic">
-    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
-    <meta name="description" content="MonoMuse website redesign project">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems, Hours, Membership">
+    <meta name="description" content="Explore MonoMuse Museum — hours, membership, and location">
     <title>MonoMuse - Explore</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,7 @@
             <img id="logo" src="../static/monomuse_logo.png" alt="MonoMuse Museum Logo">
         </header>
         <nav class="nav_bar">
-            <button class="hamburger" onclick="toggleNav()">&#9776;</button>
+            <button class="hamburger" onclick="toggleNav()" aria-label="Open navigation menu">&#9776;</button>
             <span class="nav-links">
                 <a href="../index.html">Home</a>
                 <a href="explore.html">Explore</a>
@@ -36,6 +36,7 @@
                 <img src="../assets/monomusemuseum.png" alt="MonoMuse museum exterior" class="hero-img">
             </div>
             <div class="content">
+                <h1 class="page-title">Explore MonoMuse</h1>
                 <p>Our mission is to bridge the gap between art and technology, fostering innovation and creativity in the digital age.</p>
                 <ul>
                     <li><strong>Who we serve:</strong> Artists, technologists, students, and the general public interested in contemporary culture.</li>
@@ -43,7 +44,48 @@
                     <li><strong>Milestones:</strong> Opened first exhibition in 2021, partnered with CMU in 2022, launched online platform in 2023.</li>
                 </ul>
 
-                <h3>Find Us</h3>
+                <h2>Museum Hours</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>Monday – Tuesday</h3>
+                        <p>Closed</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Wednesday – Friday</h3>
+                        <p>10:00 AM – 6:00 PM</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Saturday</h3>
+                        <p>10:00 AM – 8:00 PM</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Sunday</h3>
+                        <p>12:00 PM – 5:00 PM</p>
+                    </div>
+                </div>
+
+                <h2>Membership &amp; Donations</h2>
+                <p>Support MonoMuse and enjoy exclusive benefits year-round. Members receive discounted admission, early access to new exhibitions, and invitations to private events.</p>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>Individual</h3>
+                        <p>$75 / year</p>
+                        <p>Discounted admission + monthly newsletter</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Family</h3>
+                        <p>$120 / year</p>
+                        <p>Up to 4 members + all Individual benefits</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Patron</h3>
+                        <p>$250 / year</p>
+                        <p>All Family benefits + private event access</p>
+                    </div>
+                </div>
+                <p>To donate or inquire about corporate sponsorships, contact us at <a href="mailto:support@monomuse.org">support@monomuse.org</a>.</p>
+
+                <h2>Find Us</h2>
                 <p>MonoMuse is located in the heart of Pittsburgh, PA, near Carnegie Mellon University.</p>
                 <div id="map"></div>
             </div>
