@@ -151,6 +151,10 @@ function toggleNav() {
 // Final Project: Checkout Form — Price Calculation & Validation
 // ============================================================
 
+// jQuery loaded via CDN: https://jquery.com/
+// Leaflet.js: https://leafletjs.com/  |  Map data OpenStreetMap contributors
+// Portions of code developed with assistance from Anthropic Claude
+
 /* Ticket prices per type */
 var TICKET_PRICES = { general: 18, student: 10, member: 15 };
 
