@@ -168,14 +168,20 @@ function showCheckoutForm(dateValue) {
 }
 
 /* Recalculate and display the total price */
+/* Recalculate and display the total price */
 function updatePrice() {
     var typeEl = document.getElementById('ticketType');
     var qtyEl  = document.getElementById('ticketQty');
     var priceEl = document.getElementById('totalPrice');
     if (!typeEl || !qtyEl || !priceEl) return;
 
-    var price = TICKET_PRICES[typeEl.value] || 18;
+    var price = TICKET_PRICES[typeEl.value]; // undefined if no selection yet
     var qty   = parseInt(qtyEl.value) || 0;
+
+    if (price === undefined) {
+        priceEl.textContent = '$0.00';
+        return;
+    }
     priceEl.textContent = '$' + (price * qty).toFixed(2);
 }
 
@@ -221,6 +227,11 @@ function placeOrder() {
         valid = false;
     }
 
+    if (!type || !type.value) {
+        showFieldError('typeError', 'Please select a ticket type.');
+        valid = false;
+    }
+
     var qtyVal = parseInt(qty ? qty.value : 0);
     if (isNaN(qtyVal) || qtyVal < 1 || qtyVal > 10) {
         showFieldError('qtyError', 'Please select between 1 and 10 tickets.');
@@ -235,7 +246,7 @@ function placeOrder() {
     if (!valid) return;
 
     // Store order details in sessionStorage for confirmation page
-    var price = TICKET_PRICES[type.value] || 18;
+    var price = TICKET_PRICES[type.value];
     var total = price * qtyVal;
     var typeLabel = type.options[type.selectedIndex].text;
 
